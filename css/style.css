@@ -436,4 +436,40 @@ main {
   footer, header {
     padding: 1rem 0.5rem;
   }
+  @media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 0.5rem 0;
+  }
+
+  .nav-links li {
+    display: inline-block;
+  }
+
+  .nav-links a {
+    padding: 0.3rem 0.5rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+  }
+
+  header {
+    padding: 0.5rem;
+  }
+
+  .logo img {
+    height: 30px;
+    width: 120px;
+    margin-bottom: 0.5rem;
+  }
+}
+
 }
