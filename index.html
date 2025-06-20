@@ -67,13 +67,16 @@
     })
   ]).then(() => {
     // After header is loaded, set active nav link
-    const currentPage = window.location.pathname.split("/").pop();
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    
     document.querySelectorAll('.nav-links a').forEach(link => {
-      if (link.getAttribute('href') === currentPage) {
+      const linkHref = link.getAttribute('href');
+      if (linkHref === currentPage) {
         link.classList.add('active');
       }
     });
   });
 </script>
+
 </body>
 </html>
