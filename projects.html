@@ -110,28 +110,36 @@
     });
   });
 
-
   // Filter logic
   document.querySelectorAll('.project-filters button').forEach(button => {
-  button.addEventListener('click', () => {
-    const category = button.textContent.toLowerCase();
+    button.addEventListener('click', () => {
+      const category = button.textContent.toLowerCase();
 
-    // Filter project cards
-    document.querySelectorAll('.project-card').forEach(card => {
-      if (category === 'all') {
-        card.style.display = 'block';
-      } else {
-        card.style.display = card.classList.contains(category) ? 'block' : 'none';
-      }
-    });
+      // Filter project cards
+      document.querySelectorAll('.project-card').forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'block';
+        } else {
+          card.style.display = card.classList.contains(category) ? 'block' : 'none';
+        }
+      });
 
-    // Toggle active button style (underline)
-    document.querySelectorAll('.project-filters button').forEach(btn => {
-      btn.classList.remove('active');
+      // Toggle active button style
+      document.querySelectorAll('.project-filters button').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      button.classList.add('active');
     });
-    button.classList.add('active');
   });
-});
+
+  // ✅ Set "All" button active by default on page load
+  window.addEventListener('DOMContentLoaded', () => {
+    const allButton = document.querySelector('.project-filters button');
+    if (allButton) {
+      allButton.classList.add('active');
+    }
+  });
 </script>
+
 </body>
 </html>
