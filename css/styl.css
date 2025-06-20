@@ -1,0 +1,55 @@
+.page-banner {
+  background-color: #003366;
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.page-banner h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-box {
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.section-box h3 {
+  color: #003366;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-box ul {
+  padding-left: 1.5rem;
+}
+
+.section-box li {
+  margin-bottom: 0.5rem;
+}
+
+.light-bg {
+  background-color: #f4f4f4;
+}
+
+.team-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.team-member {
+  flex: 1;
+  min-width: 200px;
+}
+
+.timeline {
+  border-left: 4px solid #003366;
+  padding-left: 1rem;
+}
