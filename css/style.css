@@ -438,17 +438,28 @@ main {
   }
   @media (max-width: 600px) {
   .navbar {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+    flex-wrap: nowrap;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .logo img {
+    height: 30px;
+    width: auto;
   }
 
   .nav-links {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 1rem;
-    padding: 0.5rem 0;
+    flex-wrap: wrap;
+    justify-content: flex-end;
   }
 
   .nav-links li {
@@ -456,20 +467,12 @@ main {
   }
 
   .nav-links a {
-    padding: 0.3rem 0.5rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     white-space: nowrap;
-  }
-
-  header {
-    padding: 0.5rem;
-  }
-
-  .logo img {
-    height: 30px;
-    width: 120px;
-    margin-bottom: 0.5rem;
+    padding: 5px 8px;
+    color: white;
   }
 }
+
 
 }
