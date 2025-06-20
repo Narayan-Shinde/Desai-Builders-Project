@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desai Builders</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="header"></div>
+  <section class="hero"></section>
+  <section class="intro">
+  <h2>Welcome to Desai Builders</h2>
+  <p>With 20+ years of experience, Desai Builders is known for high-quality residential and commercial spaces across Maharashtra.</p>
+</section>
+<section class="featured-projects">
+  <h1>Featured Projects</h1>
+  <h2>Building Dreams, One Brick at a Time</h2>
+    <p>Explore our projects and discover excellence</p>
+  <div class="projects-grid">
+    <div class="project-card">
+      <img src="images/project1.jpg" alt="Sky Residency">
+      <h3>Sky Residency</h3>
+      <p>Completed – Pune</p>
+    </div>
+    <div class="project-card">
+      <img src="images/project2.jpg" alt="Green Haven">
+      <h3>Green Haven</h3>
+      <p>Ongoing – Nashik</p>
+    </div>
+    <div class="project-card">
+      <img src="images/project3.jpg" alt="Sunrise Towers">
+      <h3>Sunrise Towers</h3>
+      <p>Upcoming – Mumbai</p>
+    </div>
+  </div>
+  <a href="projects.html" class="cta-btn">View Projects</a>
+</section>
+
+<!-- Testimonials Section -->
+<section class="testimonials">
+  <h2>What Our Clients Say</h2>
+  <div class="testimonial">
+    <p>"Desai Builders exceeded our expectations! The team was professional, and the quality is outstanding." – Mr. Amit Kulkarni</p>
+  </div>
+  <div class="testimonial">
+    <p>"Their residential project transformed our life. Timely delivery and premium finish!" – Mrs. Neha Patil</p>
+  </div>
+</section>
+
+<!-- Footer CTA -->
+<section class="intro">
+  <h2>Ready to Build with Us?</h2>
+  <p>Contact us today and turn your vision into reality.</p>
+  <br>
+  <a href="contact.html" class="cta-btn">Get in Touch</a>
+</section>
+  <div id="footer"></div>
+  <script>
+  // Load header and footer
+  Promise.all([
+    fetch('header.html').then(res => res.text()).then(data => {
+      document.getElementById('header').innerHTML = data;
+    }),
+    fetch('footer.html').then(res => res.text()).then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+  ]).then(() => {
+    // After header is loaded, set active nav link
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>

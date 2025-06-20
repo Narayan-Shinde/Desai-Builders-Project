@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desai Builders</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div id="header"></div>
+  <main>
+  <div class="form-wrapper">
+    <h2>Contact Us</h2>
+
+  <form class="contact-form">
+  <label>Name:</label>
+  <input type="text" name="name" placeholder="Enter your full name" required>
+
+  <label>Email:</label>
+  <input type="email" name="email" placeholder="Enter your email address" required>
+
+  <label>Phone:</label>
+  <input type="tel" name="phone" placeholder="Enter your phone number">
+
+  <label>Message:</label>
+  <textarea name="message" rows="4" placeholder="Write your message here..."></textarea>
+
+  <button type="submit">Send Message</button>
+</form>
+
+
+    <div class="office-info">
+      <h3>Our Office</h3>
+      <p><strong>Address:</strong> 123 Builder Street, Pune, Maharashtra</p>
+      <p><strong>Email:</strong> info@desaibuilders.com</p>
+      <p><strong>Phone:</strong> +91 9876543210</p>
+
+      <iframe src="https://maps.google.com/maps?q=pune&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </div>
+
+    <div class="social-links">
+      <h3>Follow Us</h3>
+      <a href="https://facebook.com/desaibuilders" target="_blank">Facebook</a> |
+      <a href="https://instagram.com/desaibuilders" target="_blank">Instagram</a> |
+      <a href="https://linkedin.com/company/desaibuilders" target="_blank">LinkedIn</a>
+    </div>
+  </div>
+</main>
+  <div id="footer"></div>
+  
+<script>
+  // Load header and footer
+  Promise.all([
+    fetch('header.html').then(res => res.text()).then(data => {
+      document.getElementById('header').innerHTML = data;
+    }),
+    fetch('footer.html').then(res => res.text()).then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+  ]).then(() => {
+    // After header is loaded, set active nav link
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

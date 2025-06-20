@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Desai Builders</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <main>
+    <!-- Page Banner -->
+    <section class="page-banner">
+      <h2>About Desai Builders</h2>
+      <p>
+        With over two decades of experience, Desai Builders is a trusted name in construction,
+        delivering innovative and sustainable spaces across Maharashtra.
+      </p>
+    </section>
+
+    <!-- Mission and Vision -->
+    <section class="section-box light-bg">
+      <h3>Our Mission</h3>
+      <p>To deliver innovative, sustainable, and quality construction solutions that exceed client expectations.</p>
+
+      <h3>Our Vision</h3>
+      <p>To be recognized as the most reliable and respected construction company in the region.</p>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="section-box">
+      <h3>Leadership Team</h3>
+      <div class="team-grid">
+        <div class="team-member">
+          <strong>Mr. Raj Desai</strong><br />Founder & CEO
+        </div>
+        <div class="team-member">
+          <strong>Ms. Meena Desai</strong><br />Director, Design & Planning
+        </div>
+        <div class="team-member">
+          <strong>Mr. Arjun Patil</strong><br />Head of Construction
+        </div>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section class="section-box light-bg">
+      <h3>Certifications & Affiliations</h3>
+      <ul>
+        <li>ISO 9001:2015 Certified</li>
+        <li>Member of CREDAI Maharashtra</li>
+        <li>Licensed Contractor – Govt. of Maharashtra</li>
+      </ul>
+    </section>
+
+    <!-- Company Timeline -->
+    <section class="section-box">
+      <h3>Company Milestones</h3>
+      <div class="timeline">
+        <p><strong>2000</strong> – Company Founded in Pune</p>
+        <p><strong>2005</strong> – Completed 25th Residential Project</p>
+        <p><strong>2015</strong> – Expanded to Mumbai and Nashik</p>
+        <p><strong>2020</strong> – Achieved ISO Certification</p>
+        <p><strong>2024</strong> – Awarded “Best Builder in Maharashtra”</p>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script>
+  // Load header and footer
+  Promise.all([
+    fetch('header.html').then(res => res.text()).then(data => {
+      document.getElementById('header').innerHTML = data;
+    }),
+    fetch('footer.html').then(res => res.text()).then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+  ]).then(() => {
+    // After header is loaded, set active nav link
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>

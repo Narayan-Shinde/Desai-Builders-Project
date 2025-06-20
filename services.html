@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desai Builders</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <div id="header"></div>
+  <main>
+    <div class="hero-content">
+      <h1>What We Offer</h1>
+      <p>From concept to creation, Desai Builders turns your vision into reality.</p>
+      <br>
+      <h2>Our Services</h2
+    </div>
+<div class="services-list">
+  <div class="service">
+    <h3><i class="fas fa-house-chimney"></i>
+    Residential Construction</h3>
+    <p>High-quality homes and apartments tailored to your lifestyle.</p>
+    <p>Custom homes, villas, and modern residences tailored to your lifestyle.</p>
+  </div>
+  <div class="service">
+    <h3><i class="fas fa-city"></i> Commercial Projects</h3>
+    <p>Smart office spaces, retail outlets, and business complexes.</p>
+    <p>Corporate offices, retail stores, and commercial hubs built with precision.</p>
+  </div>
+  <div class="service">
+    <h3><i class="fas fa-ruler-combined"></i> Interior Design</h3>
+    <p>Functional and aesthetic interior planning for every need.</p>
+    <p>Stylish and smart interiors for residential and commercial spaces.</p>
+  </div>
+  <div class="service">
+    <h3> <i class="fas fa-paint-roller"></i> Renovation</h3>
+    <p>Expert renovation solutions to upgrade existing structures.</p>
+    <p>Upgrade and restore old spaces with fresh, functional, and modern designs.</p>
+  </div>
+</div>
+</main>
+  <section class="intro">
+    <h2>Ready to Build Your Dream Space?</h2>
+    <a href="contact.html" class="cta-btn">Get a Free Consultation</a>
+  </section>
+
+  <div id="footer"></div>
+<script>
+  // Load header and footer
+  Promise.all([
+    fetch('header.html').then(res => res.text()).then(data => {
+      document.getElementById('header').innerHTML = data;
+    }),
+    fetch('footer.html').then(res => res.text()).then(data => {
+      document.getElementById('footer').innerHTML = data;
+    })
+  ]).then(() => {
+    // After header is loaded, set active nav link
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
